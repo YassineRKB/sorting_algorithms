@@ -11,7 +11,7 @@ void insertion_sort_list(listint_t **list)
 		return;
 	for (node = *list; node; node = node->next)
 	{
-		while (node->next && (node->n > node->next->n))
+		for (; node->next && (node->n > node->next->n);)
 		{
 			aux = node->next;
 			node->next = aux->next;
