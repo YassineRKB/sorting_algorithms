@@ -34,13 +34,14 @@ void rec_sort(int *array, size_t size, int start, int end)
  * @size: size of the array
  * @start: starting index
  * @end: ending index
+ * Return: value int
 */
 int partition(int *array, size_t size, int start, int end)
 {
 	int i = start, j = start, aux, *piv;
 
 	if (size == 0 || start < 0 || end >= (int) size || (int) start >= end)
-        return -1;
+		return (-1);
 
 	piv = &array[end];
 	while (j <= end)
