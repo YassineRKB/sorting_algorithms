@@ -22,8 +22,8 @@ void cocktail_sort_list(listint_t **list)
 				print_list(*list);
 				sortFlag = 0;
 			}
-			end = node;
 		}
+		end = node;
 
 		if (sortFlag)
 			break;
