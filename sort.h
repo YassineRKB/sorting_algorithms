@@ -20,6 +20,7 @@ typedef struct listint_s
 
 int partition(int *array, size_t size, int start, int end);
 void rec_sort(int *array, size_t size, int start, int end);
+void node_switcher(listint_t **list, listint_t *nodeA, listint_t *nodeB);
 
 
 void print_list(const listint_t *list);
