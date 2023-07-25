@@ -11,20 +11,19 @@ void selection_sort(int *array, size_t size)
 
 	if (size < 2 || !array)
 		return;
-	while (i < size - 1)
+	while (i < size)
 	{
-		k = i;
-		j = i + 1;
-		for (; j < size;)
+		j = i;
+		for (k = i + 1; k < size;)
 		{
-			if (array[j] < array[k])
+			if (array[j] > array[k])
 				k = j;
-			j++;
+			k++;
 		}
-		if (k != 1)
+		if (j != 1)
 		{
-			aux = array[k];
-			array[k] = array[i];
+			aux = array[j];
+			array[j] = array[i];
 			array[i] = aux;
 			print_array(array, size);
 		}
