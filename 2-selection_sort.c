@@ -11,14 +11,14 @@ void selection_sort(int *array, size_t size)
 
 	if (size < 2 || !array)
 		return;
-	while (i < size)
+	while (i < size - 1)
 	{
 		j = i;
 		for (k = i + 1; k < size;)
 		{
 			if (array[j] > array[k])
-				k = j;
-			j++;
+				j = k;
+			k++;
 		}
 		if (j != 1)
 		{
