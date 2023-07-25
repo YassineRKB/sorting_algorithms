@@ -13,17 +13,18 @@ void selection_sort(int *array, size_t size)
 		return;
 	while (i < size - 1)
 	{
-		j = i;
-		for (k = i + 1; k < size;)
+		k = i;
+		j = i + 1;
+		for (; j < size;)
 		{
-			if (array[j] > array[k])
-				j = k;
-			k++;
+			if (array[j] < array[k])
+				k = j;
+			j++;
 		}
-		if (j != 1)
+		if (k != 1)
 		{
-			aux = array[j];
-			array[j] = array[i];
+			aux = array[k];
+			array[k] = array[i];
 			array[i] = aux;
 			print_array(array, size);
 		}
