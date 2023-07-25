@@ -6,26 +6,31 @@
 */
 void selection_sort(int *array, size_t size)
 {
-	size_t i = 0, j, k;
-	int aux;
+	size_t i, j = 0, l;
+	int k;
 
-	if (size < 2 || !array)
+	if (size <= 1)
 		return;
-	while (i < size - 1)
+	while (j < size - 1)
 	{
-		j = i;
-		for (k = i + 1; k < size; k++)
+		k = array[j];
+		l = j;
+		i = j;
+		while (i < size)
 		{
-			if (array[k] < array[j])
-				j = k;
+			if (k > array[i])
+			{
+				k = array[i];
+				l = i;
+			}
+			i++;
 		}
-		if (j != 1)
+		if (array[j] != array[l])
 		{
-			aux = array[j];
-			array[j] = array[i];
-			array[i] = aux;
+			array[l] = array[j];
+			array[j] = k;
 			print_array(array, size);
 		}
-		i++;
+		j++;
 	}
 }
