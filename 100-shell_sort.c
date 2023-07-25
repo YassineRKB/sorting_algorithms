@@ -13,7 +13,7 @@ void shell_sort(int *array, size_t size)
 		return;
 	for (k = 1; k < (size / 3); k = 3 * k + 1)
 		;
-	for(; k >= 1;)
+	for (; k >= 1;)
 	{
 		for (i = k; i < size; i++)
 			for (j = i; j >= k && array[j - k] > array[j];)
