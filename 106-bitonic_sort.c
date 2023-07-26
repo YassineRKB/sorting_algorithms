@@ -1,5 +1,4 @@
 #include "sort.h"
-
 /**
  * merge - merges the parts
  * @array: array to be sorted
