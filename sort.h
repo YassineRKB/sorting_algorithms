@@ -21,7 +21,9 @@ typedef struct listint_s
 int partition(int *array, size_t size, int start, int end);
 void rec_sort(int *array, size_t size, int start, int end);
 void node_switcher(listint_t **list, listint_t *nodeA, listint_t *nodeB);
-
+void merge(int *array, int start, int center, int end);
+void splice(int *array, int start, int end);
+void switcher(int *array, int *left, int *right, int l_size, int r_size, int low, int middle);
 
 void print_list(const listint_t *list);
 void print_array(const int *array, size_t size);
@@ -34,5 +36,6 @@ void quick_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
 void counting_sort(int *array, size_t size);
+void merge_sort(int *array, size_t size);
 
 #endif
