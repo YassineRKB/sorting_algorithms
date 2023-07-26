@@ -2,14 +2,15 @@
 /**
  * valNum - func to associate value to number
  * @value: value to check
+ * Return: int value
 */
 int valNum(const char *value)
 {
-	static const char *values[] = {
-		"Ace", "2", "3", "4", "5", "6", "7", "8", "9", 
+	const char *values[] = {
+		"Ace", "2", "3", "4", "5", "6", "7", "8", "9",
 		"10", "Jack", "Queen", "King"
 		};
-	static const int numbers[] = {
+	const int numbers[] = {
 		1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
 		};
 	const size_t numValues = sizeof(values) / sizeof(values[0]);
@@ -20,7 +21,7 @@ int valNum(const char *value)
 		if (!strcmp(value, values[i]))
 			return (numbers[i]);
 	}
-	return atoi(value);
+	return (atoi(value));
 }
 /**
  * checkFunc - func to check cards.
@@ -50,7 +51,8 @@ void dataSwitch(deck_node_t **list, deck_node_t *node1, deck_node_t *node2)
 		node2->next->prev = node1;
 	node2->prev = node1->prev;
 	if (node1->prev)
-	   node1->prev->next = node2;
+		node1->prev->next = node2;
+
 	node1->prev = node2;
 	node2->next = node1;
 	if (!node2->prev)
