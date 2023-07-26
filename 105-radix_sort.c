@@ -1,4 +1,9 @@
 #include "sort.h"
+/**
+ * radix_sort - func to sort array using radix algo
+ * @array: array to sort
+ * @size: size of array
+*/
 void radix_sort(int array[], size_t size)
 {
 	int max = 0;
