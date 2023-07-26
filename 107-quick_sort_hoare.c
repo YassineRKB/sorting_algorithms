@@ -58,7 +58,7 @@ void splicer(int *array, int start, int end, size_t size)
 	}
 }
 /**
- * quick_sort_hoare - func to sort array using 
+ * quick_sort_hoare - func to sort array using
  * quick sort hoare algo
  * @array: array to be sorted
  * @size: size of array
