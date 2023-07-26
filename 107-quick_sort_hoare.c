@@ -9,32 +9,20 @@
 */
 int partition(int *array, size_t size, int start, int end)
 {
-	int i = start, j = start, aux, *piv;
+	int pivot = array[end], aux;
+	int i = start - 1, j = end + 1;
 
-	if (size == 0 || start < 0 || end >= (int) size || (int) start >= end)
-		return (-1);
-
-	piv = &array[end];
-	while (j <= end)
+	while (1)
 	{
-		if (array[j] < *piv)
-		{
-			if (i < j)
-			{
-				aux = array[j];
-				array[j] = array[i];
-				array[i] = aux;
-				print_array(array, size);
-			}
-			i++;
-		}
-		j++;
-	}
-	if (array[i] > *piv)
-	{
+		while (array[++i] < pivot)
+			;
+		while (array[--j] > pivot)
+			;
+		if (i >= j)
+			break;
 		aux = array[i];
-		array[i] = *piv;
-		array[end] = aux;
+		array[i] = array[j];
+		array[j] = aux;
 		print_array(array, size);
 	}
 	return (i);
