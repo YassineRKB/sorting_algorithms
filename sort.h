@@ -24,6 +24,7 @@ void node_switcher(listint_t **list, listint_t *nodeA, listint_t *nodeB);
 void merge(int *array, int start, int center, int end);
 void splice(int *array, int start, int end);
 void switcher(int *array, int *left, int *right, int l_size, int r_size, int low, int middle);
+void heapSift(int *array, size_t size, size_t start, size_t item);
 
 void print_list(const listint_t *list);
 void print_array(const int *array, size_t size);
